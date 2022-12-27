@@ -1,0 +1,9 @@
+C:\DevSource\HistRepro\obj\Debug\net7.0\HistRepro.csproj.AssemblyReference.cache
+C:\DevSource\HistRepro\obj\Debug\net7.0\HistRepro.GeneratedMSBuildEditorConfig.editorconfig
+C:\DevSource\HistRepro\obj\Debug\net7.0\HistRepro.AssemblyInfoInputs.cache
+C:\DevSource\HistRepro\obj\Debug\net7.0\HistRepro.AssemblyInfo.cs
+C:\DevSource\HistRepro\obj\Debug\net7.0\HistRepro.csproj.CoreCompileInputs.cache
+C:\DevSource\HistRepro\obj\Debug\net7.0\HistRepro.MvcApplicationPartsAssemblyInfo.cs
+C:\DevSource\HistRepro\obj\Debug\net7.0\HistRepro.MvcApplicationPartsAssemblyInfo.cache
+C:\DevSource\HistRepro\obj\Debug\net7.0\HistRepro.RazorAssemblyInfo.cache
+C:\DevSource\HistRepro\obj\Debug\net7.0\HistRepro.RazorAssemblyInfo.cs

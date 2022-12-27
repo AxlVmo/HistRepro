@@ -1,0 +1,125 @@
+﻿@model IEnumerable<HistRepro.Models.Afore>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="container-xxl flex-grow-1 container-p-y">
+    <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Administración /</span> Afores</h4>
+    <div class="card border-0 shadow mb-4">
+        <h5 class="card-header"><a id="iNuevo" type="submit" class="btn btn-outline-primary" asp-action="Create"><i
+                    class="fas fa-plus" hidden></i> Nuevo</a></h5>
+
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table table-centered table-nowrap mb-0 rounded" id="tbl_afores">
+
+                    <thead>
+                        <tr>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Claveconsar)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Clavecorta)
+                            </th>
+
+                            <th>
+                                @Html.DisplayNameFor(model => model.Nombrecorto)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Numerooficioautorizacion)
+                            </th>
+                            <th style="text-align:center">
+                                @Html.DisplayNameFor(model => model.Estatusparticipacion)
+                            </th>
+                            <th style="text-align:center"> Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Claveconsar)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Clavecorta)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Nombrecorto)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Numerooficioautorizacion)
+                                </td>
+                                <td style="text-align:center">
+                                    @if (item.Estatusparticipacion == "ACTIVO")
+                                    {
+                                        <i class="fas fa-check-circle" style="font-size: 1em; color: green;" title="ACTIVO"></i>
+                                    }
+                                    else
+                                    {
+                                        @if (item.Estatusparticipacion == "EN_AUTORIZACION")
+                                        {
+                                            <i class="fas fa-check-circle" style="font-size: 1em; color: #FF9333;"
+                                    title="EN AUTORIZACION"></i>
+                                        }
+                                        else
+                                        {
+                                            <i class="fas fa-stop-circle" style="font-size: 1em; color: red;" title="DESACTIVO"></i>
+                                        }
+                                    }
+                                </td>
+                                <td style="text-align:center">
+                                    <a asp-action="Edit" asp-route-id="@item.Idafore" title="Editar"><i class="far fa-edit"
+                                        style="font-size: 1em; color: #FFC300;"></i></a>
+                                    <a asp-action="Delete" asp-route-id="@item.Idafore" title="Desactivar"><i
+                                        class="far fa-stop-circle" style="font-size: 1em; color: #FF9333;"></i></a>
+                                    <a asp-action="Details" asp-route-id="@item.Idafore" title="Historico"><i
+                                        class="far fa-list-alt" style="font-size: 1em; color: #67C5C4 ;"></i></a>
+                                </td>
+
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+@section Scripts {
+@{
+await Html.RenderPartialAsync("_ValidationScriptsPartial");
+}
+<script type="text/javascript">
+    $(document).ready(function () {
+
+        $('#tbl_afores').DataTable(
+            {
+
+
+                language: {
+                    "decimal": "",
+                    "emptyTable": "No hay información",
+                    "info": "Mostrando _START_ a _END_ de _TOTAL_ Entradas",
+                    "infoEmpty": "Mostrando 0 to 0 of 0 Entradas",
+                    "infoFiltered": "(Filtrado de _MAX_ total entradas)",
+                    "infoPostFix": "",
+                    "thousands": ",",
+                    "lengthMenu": "Mostrar _MENU_ Entradas",
+                    "loadingRecords": "Cargando...",
+                    "processing": "Procesando...",
+                    "search": "Buscar:",
+                    "zeroRecords": "Sin resultados encontrados",
+                    "paginate": {
+                        "first": "Primero",
+                        "last": "Ultimo",
+                        "next": "Siguiente",
+                        "previous": "Anterior"
+                    }
+                }
+            }
+        );
+
+    });
+</script>
+}

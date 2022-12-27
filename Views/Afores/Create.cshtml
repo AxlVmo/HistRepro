@@ -1,0 +1,138 @@
+﻿@model HistRepro.Models.Afore
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="container-xxl flex-grow-1 container-p-y">
+    <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Administración /</span> Afores</h4>
+    <div class="card border-0 shadow mb-4">
+        <div class="card-body">
+            <form asp-action="Create">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="row mb-4">
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <label asp-for="Claveconsar" class="control-label"></label>
+                            <input asp-for="Claveconsar" class="form-control" />
+                            <span asp-validation-for="Claveconsar" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <label asp-for="Clavecorta" class="control-label"></label>
+                            <input asp-for="Clavecorta" class="form-control" />
+                            <span asp-validation-for="Clavecorta" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <label asp-for="Estatusparticipacion" class="control-label"></label>
+                            <input asp-for="Estatusparticipacion" class="form-control" />
+                            <span asp-validation-for="Estatusparticipacion" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <label asp-for="Fechaaltaparticipacion" class="control-label"></label>
+                            <input asp-for="Fechaaltaparticipacion" class="form-control" type="date" />
+                            <span asp-validation-for="Fechaaltaparticipacion" class="text-danger"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mb-4">
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <label asp-for="Fechaautorizacionoficio" class="control-label"></label>
+                            <input asp-for="Fechaautorizacionoficio" class="form-control" />
+                            <span asp-validation-for="Fechaautorizacionoficio" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <label asp-for="Fechacambioparticipacion" class="control-label"></label>
+                            <input asp-for="Fechacambioparticipacion" class="form-control" />
+                            <span asp-validation-for="Fechacambioparticipacion" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <label asp-for="Fechaestatusparticipacion" class="control-label"></label>
+                            <input asp-for="Fechaestatusparticipacion" class="form-control" />
+                            <span asp-validation-for="Fechaestatusparticipacion" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <label asp-for="Nombrecorto" class="control-label"></label>
+                            <input asp-for="Nombrecorto" class="form-control" />
+                            <span asp-validation-for="Nombrecorto" class="text-danger"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mb-4">
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <label asp-for="Numerooficioautorizacion" class="control-label"></label>
+                            <input asp-for="Numerooficioautorizacion" class="form-control" />
+                            <span asp-validation-for="Numerooficioautorizacion" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <label asp-for="Responsableinformacion" class="control-label"></label>
+                            <input asp-for="Responsableinformacion" class="form-control" />
+                            <span asp-validation-for="Responsableinformacion" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <label asp-for="Claveentidad" class="control-label"></label>
+                            <input asp-for="Claveentidad" class="form-control" />
+                            <span asp-validation-for="Claveentidad" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <label asp-for="Descripcionentidad" class="control-label"></label>
+                            <input asp-for="Descripcionentidad" class="form-control" />
+                            <span asp-validation-for="Descripcionentidad" class="text-danger"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mb-4">
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <input type="submit" value="Create" class="btn btn-primary" />
+                            <a asp-action="Index" class="btn btn-secondary">Regresar</a>
+                        </div>
+                    </div>
+                    <div class="col-md-3"> </div>
+                    <div class="col-md-3"> </div>
+                    <div class="col-md-3"> </div>
+                    <div class="col-md-3"> </div>
+                    <div class="col-md-3"> </div>
+                </div>
+                <div class="row mb-4">
+                    <div class="col-md-3"> </div>
+                    <div class="col-md-3"> </div>
+                    <div class="col-md-3"> </div>
+                    <div class="col-md-3"> </div>
+                    <div class="col-md-3"> </div>
+                    <div class="col-md-3"> </div>
+                </div>
+                <div class="row mb-4">
+                    <div class="col-md-3"> </div>
+                    <div class="col-md-3"> </div>
+                    <div class="col-md-3"> </div>
+                    <div class="col-md-3"> </div>
+                    <div class="col-md-3"> </div>
+                    <div class="col-md-3"> </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+@section Scripts {
+@{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
