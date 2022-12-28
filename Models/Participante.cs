@@ -18,7 +18,7 @@ namespace HistRepro.Models
         public DateTime? Fechacambio { get; set; }
         public DateTime? Fechaestatus { get; set; }
         public string? Paginainternet { get; set; }
-        public string Razonsocial { get; set; } = null!;
+        public string? Razonsocial { get; set; }
         public string? Rfc { get; set; }
 
         public virtual Afore? Afore { get; set; }

@@ -12,6 +12,7 @@ namespace HistRepro.Models
         public string? Contenido { get; set; }
         public string? Usuario { get; set; }
         public int? EstatusRegistro { get; set; }
-        public DateOnly? FechaRegistro { get; set; }
+        public DateTime? FechaRegistro { get; set; }
+
     }
 }

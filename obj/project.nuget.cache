@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "KRfmkh7T7dTBF0fNkOsCRn3BH+YihfH1hJK7NfrJ5H6ThvigQur742gfj7rODGsyoLeyaMxV9NcbLWk4N1lAtQ==",
+  "dgSpecHash": "OnshdrQSVSWiqsFqQbNip/5UUr9Leju4UygTv7Ubrf1QktxVa3UfyhlhebRgDIdZb0WJW70WU6In9/WzRF++MA==",
   "success": true,
-  "projectFilePath": "c:\\DevSource\\HistRepro\\HistRepro.csproj",
+  "projectFilePath": "C:\\DevSource\\HistRepro\\HistRepro.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\axl\\.nuget\\packages\\aspnetcorehero.toastnotification\\1.1.0\\aspnetcorehero.toastnotification.1.1.0.nupkg.sha512",
     "C:\\Users\\axl\\.nuget\\packages\\csvhelper\\29.0.0\\csvhelper.29.0.0.nupkg.sha512",

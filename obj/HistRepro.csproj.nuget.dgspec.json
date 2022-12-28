@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "c:\\DevSource\\HistRepro\\HistRepro.csproj": {}
+    "C:\\DevSource\\HistRepro\\HistRepro.csproj": {}
   },
   "projects": {
-    "c:\\DevSource\\HistRepro\\HistRepro.csproj": {
+    "C:\\DevSource\\HistRepro\\HistRepro.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\DevSource\\HistRepro\\HistRepro.csproj",
+        "projectUniqueName": "C:\\DevSource\\HistRepro\\HistRepro.csproj",
         "projectName": "HistRepro",
-        "projectPath": "c:\\DevSource\\HistRepro\\HistRepro.csproj",
+        "projectPath": "C:\\DevSource\\HistRepro\\HistRepro.csproj",
         "packagesPath": "C:\\Users\\axl\\.nuget\\packages\\",
-        "outputPath": "c:\\DevSource\\HistRepro\\obj\\",
+        "outputPath": "C:\\DevSource\\HistRepro\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

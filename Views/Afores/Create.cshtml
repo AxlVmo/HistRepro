@@ -11,61 +11,32 @@
             <form asp-action="Create">
                 <div asp-validation-summary="ModelOnly" class="text-danger"></div>
                 <div class="row mb-4">
-                    <div class="col-md-3">
+                    <div class="col-md-2">
                         <div class="form-group">
                             <label asp-for="Claveconsar" class="control-label"></label>
-                            <input asp-for="Claveconsar" class="form-control" />
+                            <input asp-for="Claveconsar" class="form-control" type="text" />
                             <span asp-validation-for="Claveconsar" class="text-danger"></span>
                         </div>
                     </div>
-                    <div class="col-md-3">
+                    <div class="col-md-2">
                         <div class="form-group">
                             <label asp-for="Clavecorta" class="control-label"></label>
-                            <input asp-for="Clavecorta" class="form-control" />
+                            <input asp-for="Clavecorta" class="form-control" type="text" />
                             <span asp-validation-for="Clavecorta" class="text-danger"></span>
                         </div>
                     </div>
                     <div class="col-md-3">
                         <div class="form-group">
-                            <label asp-for="Estatusparticipacion" class="control-label"></label>
-                            <input asp-for="Estatusparticipacion" class="form-control" />
-                            <span asp-validation-for="Estatusparticipacion" class="text-danger"></span>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="form-group">
-                            <label asp-for="Fechaaltaparticipacion" class="control-label"></label>
-                            <input asp-for="Fechaaltaparticipacion" class="form-control" type="date" />
-                            <span asp-validation-for="Fechaaltaparticipacion" class="text-danger"></span>
-                        </div>
-                    </div>
-                </div>
-                <div class="row mb-4">
-                    <div class="col-md-3">
-                        <div class="form-group">
                             <label asp-for="Fechaautorizacionoficio" class="control-label"></label>
-                            <input asp-for="Fechaautorizacionoficio" class="form-control" />
+                            <input asp-for="Fechaautorizacionoficio" class="form-control" type="date" />
                             <span asp-validation-for="Fechaautorizacionoficio" class="text-danger"></span>
                         </div>
+
                     </div>
-                    <div class="col-md-3">
-                        <div class="form-group">
-                            <label asp-for="Fechacambioparticipacion" class="control-label"></label>
-                            <input asp-for="Fechacambioparticipacion" class="form-control" />
-                            <span asp-validation-for="Fechacambioparticipacion" class="text-danger"></span>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="form-group">
-                            <label asp-for="Fechaestatusparticipacion" class="control-label"></label>
-                            <input asp-for="Fechaestatusparticipacion" class="form-control" />
-                            <span asp-validation-for="Fechaestatusparticipacion" class="text-danger"></span>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
+                    <div class="col-md-5">
                         <div class="form-group">
                             <label asp-for="Nombrecorto" class="control-label"></label>
-                            <input asp-for="Nombrecorto" class="form-control" />
+                            <input asp-for="Nombrecorto" class="form-control" type="text" />
                             <span asp-validation-for="Nombrecorto" class="text-danger"></span>
                         </div>
                     </div>
@@ -74,29 +45,8 @@
                     <div class="col-md-3">
                         <div class="form-group">
                             <label asp-for="Numerooficioautorizacion" class="control-label"></label>
-                            <input asp-for="Numerooficioautorizacion" class="form-control" />
+                            <input asp-for="Numerooficioautorizacion" class="form-control" type="text" />
                             <span asp-validation-for="Numerooficioautorizacion" class="text-danger"></span>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="form-group">
-                            <label asp-for="Responsableinformacion" class="control-label"></label>
-                            <input asp-for="Responsableinformacion" class="form-control" />
-                            <span asp-validation-for="Responsableinformacion" class="text-danger"></span>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="form-group">
-                            <label asp-for="Claveentidad" class="control-label"></label>
-                            <input asp-for="Claveentidad" class="form-control" />
-                            <span asp-validation-for="Claveentidad" class="text-danger"></span>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="form-group">
-                            <label asp-for="Descripcionentidad" class="control-label"></label>
-                            <input asp-for="Descripcionentidad" class="form-control" />
-                            <span asp-validation-for="Descripcionentidad" class="text-danger"></span>
                         </div>
                     </div>
                 </div>
@@ -107,27 +57,6 @@
                             <a asp-action="Index" class="btn btn-secondary">Regresar</a>
                         </div>
                     </div>
-                    <div class="col-md-3"> </div>
-                    <div class="col-md-3"> </div>
-                    <div class="col-md-3"> </div>
-                    <div class="col-md-3"> </div>
-                    <div class="col-md-3"> </div>
-                </div>
-                <div class="row mb-4">
-                    <div class="col-md-3"> </div>
-                    <div class="col-md-3"> </div>
-                    <div class="col-md-3"> </div>
-                    <div class="col-md-3"> </div>
-                    <div class="col-md-3"> </div>
-                    <div class="col-md-3"> </div>
-                </div>
-                <div class="row mb-4">
-                    <div class="col-md-3"> </div>
-                    <div class="col-md-3"> </div>
-                    <div class="col-md-3"> </div>
-                    <div class="col-md-3"> </div>
-                    <div class="col-md-3"> </div>
-                    <div class="col-md-3"> </div>
                 </div>
             </form>
         </div>

@@ -10,7 +10,7 @@
         <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Administración /</span> Afores</h4>
         <div class="card border-0 shadow mb-4">
             <div class="card-body">
-                <form asp-action="Create">
+                <form asp-action="Edit">
                     <div asp-validation-summary="ModelOnly" class="text-danger"></div>
                     <input type="hidden" asp-for="Idafore" />
                     <div class="row mb-4">
@@ -106,36 +106,198 @@
                     <div class="row mb-4">
                         <div class="col-md-3">
                             <div class="form-group">
-                                <input type="submit" value="Create" class="btn btn-primary" />
+                                <input type="submit" value="Actualizar" class="btn btn-primary" />
                                 <a asp-action="Index" class="btn btn-secondary">Regresar</a>
                             </div>
                         </div>
-                        <div class="col-md-3"> </div>
-                        <div class="col-md-3"> </div>
-                        <div class="col-md-3"> </div>
-                        <div class="col-md-3"> </div>
-                        <div class="col-md-3"> </div>
                     </div>
                     <div class="row mb-4">
-                        <div class="col-md-3"> </div>
-                        <div class="col-md-3"> </div>
-                        <div class="col-md-3"> </div>
-                        <div class="col-md-3"> </div>
-                        <div class="col-md-3"> </div>
-                        <div class="col-md-3"> </div>
-                    </div>
-                    <div class="row mb-4">
-                        <div class="col-md-3"> </div>
-                        <div class="col-md-3"> </div>
-                        <div class="col-md-3"> </div>
-                        <div class="col-md-3"> </div>
-                        <div class="col-md-3"> </div>
-                        <div class="col-md-3"> </div>
+                        <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Administración /</span> Afore -
+                            Historico</h4>
+                        <div class="row">
+                            <div class="mb-3 col-md-3">
+                                <label class="form-label">Filtrar Fecha</label>
+                                <div class="input-group input-group-merge">
+                                    <span id="2" class="input-group-text">
+                                        <i class="fa-solid fa-map-location-dot"></i>
+                                    </span>
+                                    <input type="date" class="form-control" id="i_filtro_h" />
+                                    <button class="btn btn-outline-primary" type="button"
+                                        id="b_filtro_h">Filtrar</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12 table-responsive">
+                                <table class="table" id="tbl_afores_h">
+                                    <tbody>
+                                        <thead>
+                                            <th style="text-align:center">
+                                                Nombre Corto
+                                            </th>
+                                            <th style="text-align:center">
+                                                Tipo Accion
+                                            </th>
+                                            <th style="text-align:center">
+                                                Estatus Registro
+                                            </th>
+                                            <th style="text-align:center">
+                                                Fecha Registro
+                                            </th>
+                                        </thead>
+                                    </tbody>
+                                  
+                                </table>
+                            </div>
+                        </div>
                     </div>
                 </form>
             </div>
         </div>
     </div>
+    <!-- Modal Content -->
+    <div class="modal fade" id="modal-default" tabindex="-1" role="dialog" aria-labelledby="modal-default"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2 class="h6 modal-title">Afore</h2>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <h6 class="text-muted fw-light" id="l_Idafore"></h6>
+                    <h6 class="text-muted fw-light" id="l_Claveconsar"></h6>
+                    <h6 class="text-muted fw-light" id="l_Clavecorta"></h6>
+                    <h6 class="text-muted fw-light" id="l_Estatusparticipacion"></h6>
+                    <h6 class="text-muted fw-light" id="l_Fechaaltaparticipacion"></h6>
+                    <h6 class="text-muted fw-light" id="l_Fechaautorizacionoficio"></h6>
+                    <h6 class="text-muted fw-light" id="l_Fechacambioparticipacion"></h6>
+                    <h6 class="text-muted fw-light" id="l_Fechaestatusparticipacion"></h6>
+                    <h6 class="text-muted fw-light" id="l_Nombrecorto"></h6>
+                    <h6 class="text-muted fw-light" id="l_Numerooficioautorizacion"></h6>
+                    <h6 class="text-muted fw-light" id="l_Responsableinformacion"></h6>
+                    <h6 class="text-muted fw-light" id="l_Claveentidad"></h6>
+                    <h6 class="text-muted fw-light" id="l_Descripcionentidad"></h6>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary">Accept</button>
+                    <button type="button" class="btn btn-link text-gray-600 ms-auto"
+                        data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End of Modal Content -->
     @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    <script>
+
+        $(document).ready(function () {
+                 CargaPresupuestoPagos();
+           
+       
+        });
+        function CargaPresupuestoPagos() {
+
+            var _idafore = document.getElementById("Idafore").value;
+            $("#tbl_afores_h tbody").empty();
+            $.ajax({
+                type: "GET",
+                url: "/Afores/f_historico/",
+                data: { id: _idafore },
+                contentType: "application/json;charset=utf-8",
+                dataType: "json",
+                success: function (list) {
+                    if (list.length == 0) {
+                        document.getElementById("l_Idafore").value = null;
+                        document.getElementById("l_Claveconsar").value = null;
+                        document.getElementById("l_Clavecorta").value = null;
+                        document.getElementById("l_Estatusparticipacion").value = null;
+                        document.getElementById("l_Fechaaltaparticipacion").value = null;
+                        document.getElementById("l_Fechaautorizacionoficio").value = null;
+                        document.getElementById("l_Fechacambioparticipacion").value = null;
+                        document.getElementById("l_Fechaestatusparticipacion").value = null;
+                        document.getElementById("l_Nombrecorto").value = null;
+                        document.getElementById("l_Numerooficioautorizacion").value = null;
+                        document.getElementById("l_Responsableinformacion").value = null;
+                        document.getElementById("l_Claveentidad").value = null;
+                        document.getElementById("l_Descripcionentidad").value = null;
+                    }
+                    else {
+                        for (var i = 0, len = list.length; i < len; i++) {
+
+                            var _contenido = list[i].contenido.split(",");
+                            if (list[i].idTipoAccion == 1) {
+                                _tipo_accion = "NUEVO";
+                            }
+                            else if (list[i].idTipoAccion == 2) {
+                                _tipo_accion = "EDITADO";
+                            }
+
+                            if (list[i].estatusRegistro == 1) {
+                                _estatus_registro = "ACTIVO";
+                            }
+                            else if (list[i].estatusRegistro == 2) {
+                                _estatus_registro = "DESACTIVO";
+                            }
+
+                            var d = new Date(list[i].fechaRegistro);
+
+                            var curr_day = d.getDate();
+                            var curr_month = d.getMonth() + 1;
+                            var curr_year = d.getFullYear();
+
+                            var curr_hour = d.getHours();
+                            var curr_min = d.getMinutes();
+                            var curr_sec = d.getSeconds();
+
+                            _fecha_registro = curr_day + "/" + curr_month + "/" + curr_year;
+                            var _Idafore = _contenido[0];
+                            var _Claveconsar = _contenido[1];
+                            var _Clavecorta = _contenido[2];
+                            var _Estatusparticipacion = _contenido[3];
+                            var _Fechaaltaparticipacion = _contenido[4];
+                            var _Fechaautorizacionoficio = _contenido[5];
+                            var _Fechacambioparticipacion = _contenido[6];
+                            var _Fechaestatusparticipacion = _contenido[7];
+                            var _Nombrecorto = _contenido[8];
+                            var _Numerooficioautorizacion = _contenido[9];
+                            var _Responsableinformacion = _contenido[10];
+                            var _Claveentidad = _contenido[11];
+                            var _Descripcionentidad = _contenido[12];
+
+                            document.getElementById("l_Idafore").innerText = "Idafore: " + _Idafore;
+                            document.getElementById("l_Claveconsar").innerText = "Claveconsar: " + _Claveconsar;
+                            document.getElementById("l_Clavecorta").innerText = "Clavecorta: " + _Clavecorta;
+                            document.getElementById("l_Estatusparticipacion").innerText = "Estatus Participacion: " + _Estatusparticipacion;
+                            document.getElementById("l_Fechaaltaparticipacion").innerText = "Fecha Alta Participacion: " + _Fechaaltaparticipacion;
+                            document.getElementById("l_Fechaautorizacionoficio").innerText = "Fecha Autorizacion Oficio: " + _Fechaautorizacionoficio;
+                            document.getElementById("l_Fechacambioparticipacion").innerText = "Fecha Cambio Participacion: " + _Fechacambioparticipacion;
+                            document.getElementById("l_Fechaestatusparticipacion").innerText = "Fecha Estatus Participacion: " + _Fechaestatusparticipacion;
+                            document.getElementById("l_Nombrecorto").innerText = "Nombre Corto: " + _Nombrecorto;
+                            document.getElementById("l_Numerooficioautorizacion").innerText = "Numero Oficio Autorizacion: " + _Numerooficioautorizacion;
+                            document.getElementById("l_Responsableinformacion").innerText = "Responsable Informacion: " + _Responsableinformacion;
+                            document.getElementById("l_Claveentidad").innerText = "Clave Entidad: " + _Claveentidad;
+                            document.getElementById("l_Descripcionentidad").innerText = "Descripcion Entidad: " + _Descripcionentidad;
+
+
+                            $("#tbl_afores_h tbody").append(
+                                $("<tr>").append(
+                                    $("<td style='text-align:center'>").text(_Nombrecorto),
+                                    $("<td style='text-align:center'>").text(_tipo_accion),
+                                    $("<td style='text-align:center'>").text(_estatus_registro),
+                                    $("<td style='text-align:center'>").text(_fecha_registro),
+                                    $("<td style='text-align:center'><button type='button' class='btn btn-block btn-gray-800 mb-3' data-bs-toggle='modal' data-bs-target='#modal-default'>Detalles</button></td>"))
+                            )
+
+                        }
+                    }
+                },
+                error: function () {
+                    alert("Error!!")
+                }
+            });
+        }
+       
+    </script>
     }
